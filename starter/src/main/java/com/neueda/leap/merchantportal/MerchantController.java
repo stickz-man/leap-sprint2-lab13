@@ -9,6 +9,7 @@ public class MerchantController {
     @Autowired
     private PayoutRepository payoutRepository;
 
+    // A10 - Access Control Failure. Users can retrieve payment information of a transaction through URLs.
     @GetMapping("/api/payouts/{payoutId}")
     public PayoutRequest getPayout(@PathVariable Long payoutId) {
         return payoutRepository.findById(payoutId)

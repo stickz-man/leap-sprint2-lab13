@@ -20,6 +20,7 @@ public class BatchPayoutJob {
                 bankTransferClient.transfer(payout.getMerchantId(), payout.getAmount());
                 payout.setApprovalStatus("PAID");
             } catch (BankTransferException e) {
+                // This is bad! A10 error. We're improperly marking incorrect forms as Paid for no reason!
                 log.warn("Transfer failed for payout {}, marking paid anyway: {}",
                         payout.getId(), e.getMessage());
                 payout.setApprovalStatus("PAID");
