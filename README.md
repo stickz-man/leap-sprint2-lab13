@@ -3,3 +3,6 @@
 BatchPayoutJob | A10 - Mishandling of Exceptional Conditions. Payouts are logged as paid when failing | 5
 MerchantController | A01 - Access Control Failure. Users can retrieve payment information of a transaction through URLs. | 8
 Pom.xml | A02 - Security Misconfiguration. The version of the apache logger is old, and has a lot of vulnerabilities. Needs an update. | 3
+
+WebhookController | A08 - Software and Data Integrity Failures. Webhook endpoints accept payment status updates without verifying the request source, allowing anyone to mark payouts as settled. 
+Fix: Add HMAC-SHA256 signature verification and timestamp validation. |
