@@ -22,7 +22,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>3.2.5</version>
         </dependency>
-        <dependency>
+        <dependency> <!-- This dependency has a lot of vulnerabilities. A02 error-->
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.14.1</version>
